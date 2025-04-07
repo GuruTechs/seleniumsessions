@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="PERSONALLOAN" parallel="tests" thread-count="2">
+	
+	<listeners>
+		<listener class-name="testNGFrameWork.ListenersTest"/>
+	</listeners>
+	
+	<parameter name="fb" value="www.fb.com"></parameter>
+	
+	<test thread-count="5" name="PLoan">
+		
+		<classes>
+			<class name="testNGFrameWork.Day2">
+			<methods>
+				<include name="carLoan"></include>
+			</methods>
+			  
+			</class>
+			<class name="testNGFrameWork.Day1" />
+			
+		</classes>
+	</test> <!--
+	Test -->
+
+	<test thread-count="5" name="Car and Home Loan">
+		<classes>
+			<class name="testNGFrameWork.Day3">
+				<methods>
+					<exclude name="API.*"></exclude>
+				
+				</methods>
+			</class>
+
+		</classes>
+	</test>
+
+</suite> <!--
+Suite -->
